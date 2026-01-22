@@ -1,4 +1,4 @@
-let target = new Date(2026, 0, 24, 14, 0, 0);
+let target = new Date(2026, 0, 22, 11, 15, 0);
 
 const elDays = document.getElementById('days');
 const elHours = document.getElementById('hours');
@@ -11,6 +11,7 @@ function pad(n){
 }
 
 let timer = null;
+let hasCelebrated = false;
 
 function update(newTarget){
 	if(newTarget){
@@ -24,7 +25,15 @@ function update(newTarget){
 		elHours.textContent = '00';
 		elMinutes.textContent = '00';
 		elSeconds.textContent = '00';
-		elMessage.textContent = 'Chegou a hora de te ver';
+		elMessage.textContent = 'Chegou a hora de ver o meu amor';
+		if(!hasCelebrated){
+			confetti({
+				particleCount: 100,
+				spread: 70,
+				origin: { y: 0.6 }
+			});
+			hasCelebrated = true;
+		}
 		if(timer){
 			clearInterval(timer);
 			timer = null;
