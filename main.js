@@ -1,4 +1,4 @@
-let target = new Date(2026, 0, 22, 11, 15, 0);
+let target = new Date(2026, 0, 24, 14, 00, 0);
 
 const elDays = document.getElementById('days');
 const elHours = document.getElementById('hours');
