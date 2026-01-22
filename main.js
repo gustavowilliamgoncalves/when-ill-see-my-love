@@ -1,4 +1,4 @@
-let target = new Date(2026, 0, 24, 14, 0, 0); // mês: 0=jan, 1=fev
+let target = new Date(2026, 0, 24, 14, 0, 0);
 
 const elDays = document.getElementById('days');
 const elHours = document.getElementById('hours');
@@ -12,9 +12,6 @@ function pad(n){
 
 let timer = null;
 
-/**
- * `update('2026-02-24T14:00:00')` ou `update(new Date(2026,1,24,14))`.
- */
 function update(newTarget){
 	if(newTarget){
 		target = (newTarget instanceof Date) ? newTarget : new Date(newTarget);
@@ -27,7 +24,7 @@ function update(newTarget){
 		elHours.textContent = '00';
 		elMinutes.textContent = '00';
 		elSeconds.textContent = '00';
-		elMessage.textContent = 'Já chegou!';
+		elMessage.textContent = 'Chegou a hora de te ver';
 		if(timer){
 			clearInterval(timer);
 			timer = null;
